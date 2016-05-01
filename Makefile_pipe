@@ -1,0 +1,11 @@
+all: default
+
+default: 
+	aoc -g -v --high-effort --const-cache-bytes 32768 --fpc --fp-relaxed cnnpipe.cl
+	mv cnnpipe.aocx ../bin/ 
+
+resource:
+	aoc -c -v -g  --const-cache-bytes 32768  --fpc --fp-relaxed cnnpipe.cl --report
+	
+clean:
+	rm -rf *.aoco *.aocx cnnpipe

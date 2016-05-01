@@ -1,0 +1,11 @@
+all: default
+
+default: 
+	aoc -g -v --high-effort  --fpc --fp-relaxed cnnparallel.cl
+	mv cnnparallel.aocx ../bin/ 
+
+resource:
+	aoc -c -v -g --fpc --fp-relaxed cnnparallel.cl --report
+	
+clean:
+	rm -rf *.aoco *.aocx cnnparallel
